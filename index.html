@@ -25,7 +25,7 @@
   .cover-headline { font-size: 7.2rem; font-weight: 900; line-height: 1.05; letter-spacing: -0.04em; color: #111; margin-bottom: 32px; word-break: keep-all; }
   .cover-headline .em { color: #ec4125; }
   .cover-sub { font-size: 2rem; color: rgba(0,0,0,0.50); line-height: 1.6; max-width: 620px; word-break: keep-all; margin-bottom: 64px; font-weight: 500; }
-  .cover-stats { display: flex; gap: 48px; justify-content: center; }
+  .cover-stats { display: flex; gap: 48px; justify-content: center; flex-wrap: wrap; }
   .cover-stat-num { font-size: 4.8rem; font-weight: 900; color: #ec4125; letter-spacing: -0.04em; line-height: 1; }
   .cover-stat-label { font-size: 1.4rem; color: rgba(0,0,0,0.50); margin-top: 6px; font-weight: 500; }
   .cover-stat-divider { width: 1px; background: rgba(0,0,0,0.10); align-self: stretch; }
@@ -160,6 +160,13 @@
     .fomo-headline { font-size: 5.2rem; }
     .cta-headline { font-size: 4.8rem; }
   }
+
+  @media (max-width: 768px) {
+    .stat-card { flex-direction: column !important; gap: 24px !important; }
+    .stat-card > div[style*="width:1px"] { width: 100% !important; height: 1px !important; align-self: auto !important; }
+    .cover-stats > div:not(.cover-stat-divider) { min-width: 0; flex: 1 1 120px; }
+    .cover-stat-divider { display: none; }
+  }
 </style>
 </head>
 <body>
@@ -292,7 +299,7 @@
       <div class="compare-item"><span class="compare-dot-after"></span>1차 해결률 향상, 고객 만족도 개선</div>
     </div>
   </div>
-  <div style="margin-top:28px;display:flex;gap:48px;padding:28px 36px;background:#fff;border-radius:16px;border:1px solid rgba(0,0,0,0.08);">
+  <div class="stat-card" style="margin-top:28px;display:flex;gap:48px;padding:28px 36px;background:#fff;border-radius:16px;border:1px solid rgba(0,0,0,0.08);">
     <div>
       <div style="font-size:1.2rem;font-weight:700;color:rgba(0,0,0,0.35);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">필요 인력</div>
       <div style="font-size:3.6rem;font-weight:900;color:#ec4125;letter-spacing:-0.04em;">10명 → 5명</div>
